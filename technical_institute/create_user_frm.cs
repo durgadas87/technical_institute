@@ -25,5 +25,13 @@ namespace technical_institute
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            technical_master master_obj = new technical_master();
+            master_obj.db_connect();
+            master_obj.create_user(user_name_txt,password_txt,conf_password_txt,sec_ques_combo,sec_ans_txt,contact_txt);
+
+        }
     }
 }

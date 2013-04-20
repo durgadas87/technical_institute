@@ -9,26 +9,19 @@ using System.Windows.Forms;
 
 namespace technical_institute
 {
-    public partial class search_by_name_frm : Form
+    public partial class change_Password : Form
     {
-        public search_by_name_frm()
+        public change_Password()
         {
             InitializeComponent();
         }
 
-        private void search_by_name_frm_Load(object sender, EventArgs e)
-        {
-            technical_master master_obj = new technical_master();
-            master_obj.load_acedamic_year(comboBox2);
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

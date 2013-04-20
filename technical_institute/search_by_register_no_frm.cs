@@ -25,5 +25,23 @@ namespace technical_institute
         {
             this.Close();
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+            
+         
+        }
+
+        private void search_by_register_no_frm_Load(object sender, EventArgs e)
+        {
+            
+           technical_master master_obj = new technical_master();
+           master_obj.load_acedamic_year(comboBox2);
+
+        }
     }
 }

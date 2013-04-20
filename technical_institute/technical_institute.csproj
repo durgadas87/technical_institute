@@ -36,6 +36,9 @@
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="SmsClient">
+      <HintPath>C:\Users\mis\Desktop\SmsClient.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="abc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="abc.Designer.cs">
+      <DependentUpon>abc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="add_academic_year_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_academic_year_frm.Designer.cs">
+      <DependentUpon>add_academic_year_frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="add_trade_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,11 +75,35 @@
     <Compile Include="backup_db_frm.Designer.cs">
       <DependentUpon>backup_db_frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="change Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="change Password.designer.cs">
+      <DependentUpon>change Password.cs</DependentUpon>
+    </Compile>
     <Compile Include="create_user_frm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="create_user_frm.Designer.cs">
       <DependentUpon>create_user_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="search_enquiry_detail_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="search_enquiry_detail_frm.Designer.cs">
+      <DependentUpon>search_enquiry_detail_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="send_message_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="send_message_frm.Designer.cs">
+      <DependentUpon>send_message_frm.cs</DependentUpon>
     </Compile>
     <Compile Include="student_enquiry_frm.cs">
       <SubType>Form</SubType>
@@ -152,6 +191,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="student_registration_updated_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="student_registration_updated_frm.Designer.cs">
+      <DependentUpon>student_registration_updated_frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="technical_master.cs" />
     <Compile Include="welcome_frm.cs">
       <SubType>Form</SubType>
@@ -159,14 +204,32 @@
     <Compile Include="welcome_frm.Designer.cs">
       <DependentUpon>welcome_frm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="abc.resx">
+      <DependentUpon>abc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_academic_year_frm.resx">
+      <DependentUpon>add_academic_year_frm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="add_trade_form.resx">
       <DependentUpon>add_trade_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="backup_db_frm.resx">
       <DependentUpon>backup_db_frm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="change Password.resx">
+      <DependentUpon>change Password.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="create_user_frm.resx">
       <DependentUpon>create_user_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="search_enquiry_detail_frm.resx">
+      <DependentUpon>search_enquiry_detail_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="send_message_frm.resx">
+      <DependentUpon>send_message_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="student_enquiry_frm.resx">
       <DependentUpon>student_enquiry_frm.cs</DependentUpon>
@@ -220,6 +283,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="student_registration_updated_frm.resx">
+      <DependentUpon>student_registration_updated_frm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="welcome_frm.resx">
       <DependentUpon>welcome_frm.cs</DependentUpon>
     </EmbeddedResource>

@@ -28,69 +28,7 @@ namespace technical_institute
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            try
-            {
-                
-                strb = new SqlConnectionStringBuilder();
-                strb.DataSource = "SHYAM-PC\\SQLEXPRESS";
-                strb.InitialCatalog = "grk_db";
-                strb.UserID = "sa";
-                strb.Password = "12345";
-                con = new SqlConnection(strb.ConnectionString);
-                con.Open();
-                cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "select academic_year from academic_year_tbl";
-                reader = cmd.ExecuteReader();
              
-
-                sub_caste_txt.Enabled = false;
-                serial_txt.Enabled = false;
-                register_txt.Enabled = false;
-                this.fname_txt.Enabled = false;
-                selfname_txt.Enabled = false;
-                lname_txt.Enabled = false;
-                address_txt.Enabled = false;
-                taluka_txt.Enabled = false;
-                district_txt.Enabled = false;
-                state_txt.Enabled = false;
-                pin_code_txt.Enabled = false;
-                contact_txt.Enabled = false;
-                gender_combo.Enabled = false;
-                birthdate_picker.Enabled = false;
-//                standard_combo.Enabled = false;
-                current_year_combo.Enabled = false;
-                admitdate_picker.Enabled = false;
-                religon_combo.Enabled = false;
-                cast_txt.Enabled = false;
-                category_combo.Enabled = false;
-                age_txt.Enabled = false;
-                textBox3.Enabled = false;
-                strb = new SqlConnectionStringBuilder();
-                strb.DataSource = "SHYAM-PC\\SQLEXPRESS";
-                strb.InitialCatalog = "grk_db";
-                strb.UserID = "sa";
-                strb.Password = "12345";
-                con = new SqlConnection(strb.ConnectionString);
-                con.Open();
-                cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "select academic_year from academic_year_tbl";
-                reader = cmd.ExecuteReader();
-                
-                while (reader.Read())
-                {
-                    current_year_combo.Items.Add("" + reader[0].ToString());
-                }
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Error:" + error.Message);
-            }
-            finally
-            {
-                
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -294,36 +232,6 @@ namespace technical_institute
 
         private void register_txt_Leave(object sender, EventArgs e)
         {
-            try
-            {
-                if (register_txt.Text != "")
-                {
-                    strb = new SqlConnectionStringBuilder();
-                    strb.DataSource = "SHYAM-PC\\SQLEXPRESS";
-                    strb.InitialCatalog = "grk_db";
-                    strb.UserID = "sa";
-                    strb.Password = "12345";
-                    con = new SqlConnection(strb.ConnectionString);
-                    con.Open();
-                    cmd = new SqlCommand();
-                    cmd.Connection = con;
-                    cmd.CommandText = "select register_no from student_tbl where register_no=" + register_txt.Text;
-                    reader = cmd.ExecuteReader();
-                    if (reader.HasRows)
-                    {
-                       
-                        MessageBox.Show("Register number already exist. Please input another number");
-                        register_txt.Text = "";
-                        register_txt.Focus();
-                    }
-                }
-
-              
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error:" + ex.Message);
-            }
         }
 
         private void standard_combo_SelectedIndexChanged(object sender, EventArgs e)
@@ -407,6 +315,11 @@ namespace technical_institute
         private void button7_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+
         }
     }
 }

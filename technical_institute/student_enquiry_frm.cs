@@ -6,12 +6,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
 namespace technical_institute
 {
     public partial class student_enquiry_frm : Form
     {
         technical_master master_obj;
+        SqlConnectionStringBuilder bldr;
+        SqlConnection con;
+        SqlCommand cmd;
+        SqlDataReader reader;
         
         public student_enquiry_frm()
         {
@@ -28,7 +32,7 @@ namespace technical_institute
         {
             master_obj = new technical_master();
             master_obj.load_trade_name(trade_combo);
-            
+           
 
         }
 
@@ -69,9 +73,24 @@ namespace technical_institute
             enquiry_date_picker.Enabled = true;
             email_id_txt.Enabled = true;
             email_id_txt.ReadOnly = false;
+            save_btn.Enabled = true;
 
 
 
         }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            master_obj.db_connect();
+            master_obj.save_student_enquary(enquiry_id_txt,student_name_txt , address_txt, contact_txt, trade_combo, gender_combo, education_txt, enquiry_date_picker, email_id_txt);
+        
+        }
+
+        private void trade_combo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

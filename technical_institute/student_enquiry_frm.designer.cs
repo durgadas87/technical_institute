@@ -33,7 +33,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.save_btn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
@@ -41,6 +41,8 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.enquiry_id_txt = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.trade_combo = new System.Windows.Forms.ComboBox();
             this.enquiry_date_picker = new System.Windows.Forms.DateTimePicker();
             this.gender_combo = new System.Windows.Forms.ComboBox();
@@ -59,8 +61,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.enquiry_id_txt = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -122,16 +122,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // save_btn
             // 
-            this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(374, 403);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 28);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
+            this.save_btn.Enabled = false;
+            this.save_btn.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save_btn.Location = new System.Drawing.Point(374, 403);
+            this.save_btn.Name = "save_btn";
+            this.save_btn.Size = new System.Drawing.Size(70, 28);
+            this.save_btn.TabIndex = 8;
+            this.save_btn.Text = "Save";
+            this.save_btn.UseVisualStyleBackColor = true;
+            this.save_btn.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
@@ -202,7 +203,7 @@
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.trade_combo);
-            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.save_btn);
             this.panel5.Controls.Add(this.enquiry_date_picker);
             this.panel5.Controls.Add(this.button3);
             this.panel5.Controls.Add(this.button4);
@@ -228,6 +229,30 @@
             this.panel5.TabIndex = 24;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
+            // enquiry_id_txt
+            // 
+            this.enquiry_id_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.enquiry_id_txt.Enabled = false;
+            this.enquiry_id_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enquiry_id_txt.Location = new System.Drawing.Point(284, 61);
+            this.enquiry_id_txt.Multiline = true;
+            this.enquiry_id_txt.Name = "enquiry_id_txt";
+            this.enquiry_id_txt.ReadOnly = true;
+            this.enquiry_id_txt.Size = new System.Drawing.Size(123, 27);
+            this.enquiry_id_txt.TabIndex = 51;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(148, 66);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(80, 17);
+            this.label12.TabIndex = 50;
+            this.label12.Text = "Enquiry ID";
+            // 
             // trade_combo
             // 
             this.trade_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -238,6 +263,7 @@
             this.trade_combo.Name = "trade_combo";
             this.trade_combo.Size = new System.Drawing.Size(137, 25);
             this.trade_combo.TabIndex = 3;
+            this.trade_combo.SelectedIndexChanged += new System.EventHandler(this.trade_combo_SelectedIndexChanged);
             // 
             // enquiry_date_picker
             // 
@@ -440,30 +466,6 @@
             this.label11.TabIndex = 4;
             this.label11.Text = "Student Enquiry Section";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(148, 66);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 17);
-            this.label12.TabIndex = 50;
-            this.label12.Text = "Enquiry ID";
-            // 
-            // enquiry_id_txt
-            // 
-            this.enquiry_id_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enquiry_id_txt.Enabled = false;
-            this.enquiry_id_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enquiry_id_txt.Location = new System.Drawing.Point(284, 61);
-            this.enquiry_id_txt.Multiline = true;
-            this.enquiry_id_txt.Name = "enquiry_id_txt";
-            this.enquiry_id_txt.ReadOnly = true;
-            this.enquiry_id_txt.Size = new System.Drawing.Size(123, 27);
-            this.enquiry_id_txt.TabIndex = 51;
-            // 
             // student_enquiry_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -499,7 +501,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button save_btn;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;

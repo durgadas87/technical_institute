@@ -110,14 +110,23 @@ namespace technical_institute
             trade_obj.Show();
         }
 
+      //  privaion_short_frm admission_form = new admission_short_frm();
+           // stte void addStudentEnquiryToolStripMenuItem_Click(object sender, EventArgs e)
+        
+            //admissudent_registration_updated_frm admission_form = new student_registration_updated_frm();
+            
         private void addStudentEnquiryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            admission_short_frm admission_form = new admission_short_frm();
-            admission_form.MdiParent = this;
-            admission_form.Show();
-        }
+        //abc admission = new abc(); 
+        //    admission.Show();
+            student_registration_updated_frm frm = new student_registration_updated_frm();
+            frm.MdiParent = this;
+            frm.Show();
 
-        private void studentEnquiryToolStripMenuItem_Click(object sender, EventArgs e)
+        
+        } 
+
+        public void studentEnquiryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             student_enquiry_frm frm = new student_enquiry_frm();
             frm.MdiParent = this;
@@ -125,7 +134,7 @@ namespace technical_institute
 
         }
 
-        private void receiptToolStripMenuItem_Click(object sender, EventArgs e)
+        public void receiptToolStripMenuItem_Click(object sender, EventArgs e)
         {
             receipt_frm frm = new receipt_frm();
             frm.MdiParent = this;
@@ -228,6 +237,164 @@ namespace technical_institute
             print_marksheet_frm obj = new print_marksheet_frm();
             obj.MdiParent = this;
             obj.Show();
+        }
+
+        private void studentInfoDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            search_enquiry_detail_frm frm = new search_enquiry_detail_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void addNewSessionInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            add_academic_year_frm frm = new add_academic_year_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            change_Password ch = new change_Password();
+            ch.MdiParent=this;
+            ch.Show();
+
+        }
+
+        private void receiptToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            receipt_frm frm = new receipt_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void studentEnquiryToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            student_enquiry_frm frm = new student_enquiry_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void createUserToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            create_user_frm frm = new create_user_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void studentInfoDetailsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addNewSessionInfoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            add_academic_year_frm frm = new add_academic_year_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void userLoginToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            login_frm frm = new login_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void changePasswordToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            change_Password frm = new change_Password();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void byNameToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            search_by_name_frm frm = new search_by_name_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void byCityToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            search_by_city_frm frm = new search_by_city_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void byRegisterNumberToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            search_by_register_no_frm frm = new search_by_register_no_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void byTradeToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            search_by_trade_frm frm = new search_by_trade_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void receiptToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            receipt_frm frm = new receipt_frm(); 
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void bonafideToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            print_bonafide_frm frm = new print_bonafide_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void marksheetToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            print_marksheet_frm frm = new print_marksheet_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void certificateToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            print_certificate_frm frm = new print_certificate_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void generalRegisterToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            print_general_register_frm frm = new print_general_register_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void backupToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            backup_db_frm frm = new backup_db_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void restoreToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            restore_db_frm frm = new restore_db_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void searchEnquiryDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            search_enquiry_detail_frm frm = new search_enquiry_detail_frm();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

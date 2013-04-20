@@ -20,5 +20,11 @@ namespace technical_institute
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            technical_master obj = new technical_master();
+            obj.user_login(username_txt, password_txt);
+        }
     }
 }

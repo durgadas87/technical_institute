@@ -30,5 +30,12 @@ namespace technical_institute
         {
             this.Close();
         }
+
+        private void search_by_city_frm_Load(object sender, EventArgs e)
+        {
+            technical_master master_obj = new technical_master();
+            master_obj.load_acedamic_year(comboBox2);
+
+        }
     }
 }
