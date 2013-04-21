@@ -30,17 +30,28 @@ namespace technical_institute
             by_month_combo.Enabled = false;
             by_month_year_combo.Enabled = false;
             by_year_combo.Enabled = false;
+            for (int i = 1980; i <= 2100; i++)
+            {
+                by_month_year_combo.Items.Add("" + i);
+
+            }
+            for (int i = 1; i <= 12; i++)
+            {
+                by_month_combo.Items.Add("" + i);
+            }
+            for (int i = 1980; i <= 2100; i++)
+            {
+                by_year_combo.Items.Add("" + i);
+
+            }
+
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton1.Checked == true)
             {
-                for (int i = 1980; i <= 2100; i++)
-                {
-                    by_year_combo.Items.Add("" + i);
-                    
-                }
+            
                 by_year_combo.Enabled = true;
             }
             else
@@ -55,15 +66,6 @@ namespace technical_institute
         {
             if (radioButton2.Checked == true)
             {
-                for (int i = 1980; i <= 2100; i++)
-                {
-                    by_month_year_combo.Items.Add("" + i);
-
-                }
-                for (int i = 1; i <= 12; i++)
-                {
-                    by_month_combo.Items.Add("" + i);
-                }
 
                 by_month_combo.Enabled = true;
                 by_month_year_combo.Enabled = true;
@@ -94,7 +96,7 @@ namespace technical_institute
 
         private void button2_Click(object sender, EventArgs e)
         {
-            master_obj.search_student_enquiry(trade_combo,by_year_combo,by_month_combo,by_month_year_combo,by_date_picker,radioButton1,radioButton2,radioButton3);
+            master_obj.search_student_enquiry(trade_combo,by_year_combo,by_month_combo,by_month_year_combo,by_date_picker,radioButton1,radioButton2,radioButton3,dataGridView1);
         }
     }
 }

@@ -315,32 +315,152 @@ namespace technical_institute
         }
 
     }
-    public void search_student_enquiry(ComboBox trade_combo,ComboBox by_year_combo,ComboBox by_month_combo,ComboBox by_month_year_combo,DateTimePicker by_date_picker,RadioButton btn1,RadioButton btn2,RadioButton btn3)
+    public void search_student_enquiry(ComboBox trade_combo,ComboBox by_year_combo,ComboBox by_month_combo,ComboBox by_month_year_combo,DateTimePicker by_date_picker,RadioButton btn1,RadioButton btn2,RadioButton btn3,DataGridView grid_obj)
     {
         try
         {
             string trade_name;
-            string by_year;
+            string by_year,by_month,by_month_year;
+            string by_date;
+
             if (!String.IsNullOrEmpty(trade_combo.Text))
             {
                 trade_name = trade_combo.Text;
-                MessageBox.Show("" + trade_name);
+      //          MessageBox.Show("" + trade_name);
+               
             }
             if (btn1.Checked == true)
             {
                 if (!String.IsNullOrEmpty(by_year_combo.Text))
                 {
+                    search_by_year_function(trade_combo, grid_obj,by_year_combo);
                     by_year = by_year_combo.Text;
+    //                MessageBox.Show("" + by_year);
                 }
             }
             if (btn2.Checked == true)
             {
                 if (!String.IsNullOrEmpty(by_month_combo.Text) && !String.IsNullOrEmpty(by_month_year_combo.Text))
                 {
-                   
+                    by_month = by_month_combo.Text;
+                    by_month_year = by_month_year_combo.Text;
+                    search_by_month_and_year(trade_combo, grid_obj,by_month_combo,by_month_year_combo);
+
+  //                  MessageBox.Show("" + by_month + "   " + by_month_year);
+                }
+            }
+            if (btn3.Checked == true)
+            {
+                if (!String.IsNullOrEmpty(by_date_picker.Text))
+                {
+                    by_date = by_date_picker.Text;
+                    search_by_date_function(trade_combo,grid_obj,by_date_picker);
+//                    MessageBox.Show("" + by_date + " " + by_date_picker.Value.Date.Month);
                 }
             }
 
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error : " + ex.Message);
+        }
+    }
+    public void search_by_date_function(ComboBox trade_combo,DataGridView grid_obj,DateTimePicker date_picker)
+    {
+        try
+        {
+            db_connect();
+            cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select student_name,address,contact_no,trade,education,date_of_enquiry from student_enquiry_tbl where trade like '" + trade_combo.Text + "' and date_of_enquiry like'"+date_picker.Text + "'";
+            reader = cmd.ExecuteReader();
+            int counter = 0;
+            if (reader.HasRows)
+            {
+                grid_obj.Rows.Clear();
+                while (reader.Read())
+                {
+                    counter = counter + 1;
+                    string[] row = new string[]
+                    {
+                        ""+counter,reader[0].ToString(),reader[1].ToString(),reader[2].ToString(),reader[3].ToString(),reader[4].ToString(),reader[5].ToString()
+                    };
+
+                    grid_obj.Rows.Add(row);
+                }
+            }
+            else
+            {
+                grid_obj.Rows.Clear();
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error : " + ex.Message);
+        }
+    }
+
+    public void search_by_month_and_year(ComboBox trade_combo, DataGridView grid_obj, ComboBox month_combo, ComboBox year_combo)
+    {
+        try
+        {
+            db_connect();
+            cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select student_name,address,contact_no,trade,education,date_of_enquiry from student_enquiry_tbl where trade like '" + trade_combo.Text + "' and month like '"+month_combo.Text +"' and  year like '" + year_combo.Text + "'";
+            reader = cmd.ExecuteReader();
+            int counter = 0;
+            if (reader.HasRows)
+            {
+                grid_obj.Rows.Clear();
+                while (reader.Read())
+                {
+                    counter = counter + 1;
+                    string[] row = new string[]
+                    {
+                       ""+counter,reader[0].ToString(),reader[1].ToString(),reader[2].ToString(),reader[3].ToString(),reader[4].ToString(),reader[5].ToString()
+                    };
+                    grid_obj.Rows.Add(row);
+                }
+            }
+            else
+            {
+                grid_obj.Rows.Clear();
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error : " + ex.Message);
+        }
+    }
+    public void search_by_year_function(ComboBox trade_combo,DataGridView grid_obj,ComboBox year_combo)
+    {
+        try
+        {
+            db_connect();
+            cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select student_name,address,contact_no,trade,education,date_of_enquiry from student_enquiry_tbl where trade like '"+trade_combo.Text+"' and year ='"+year_combo.Text+"'";
+            reader = cmd.ExecuteReader();
+            int counter = 0;
+            if (reader.HasRows)
+            {
+                grid_obj.Rows.Clear();
+                while (reader.Read())
+                {
+                    counter = counter + 1;
+                    string[] row = new string[]
+                    {
+                        ""+counter,reader[0].ToString(),reader[1].ToString(),reader[2].ToString(),reader[3].ToString(),reader[4].ToString(),reader[5].ToString()
+                    };
+                    grid_obj.Rows.Add(row);
+                }
+
+            }
+            else
+            {
+                grid_obj.Rows.Clear();
+            }
         }
         catch (Exception ex)
         {

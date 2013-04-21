@@ -35,7 +35,6 @@
             this.studentEnquiryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addStudentEnquiryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.receiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentInfoDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewSessionInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +45,7 @@
             this.byCityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byRegisterNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byTradeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchEnquiryDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.receiptToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.bonafideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +60,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.searchEnquiryDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +87,6 @@
             this.studentEnquiryToolStripMenuItem,
             this.addStudentEnquiryToolStripMenuItem,
             this.receiptToolStripMenuItem,
-            this.studentInfoDetailsToolStripMenuItem,
             this.addNewSessionInfoToolStripMenuItem});
             this.formsToolStripMenuItem.Name = "formsToolStripMenuItem";
             this.formsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
@@ -122,13 +120,6 @@
             this.receiptToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.receiptToolStripMenuItem.Text = "Receipt ";
             this.receiptToolStripMenuItem.Click += new System.EventHandler(this.receiptToolStripMenuItem_Click_1);
-            // 
-            // studentInfoDetailsToolStripMenuItem
-            // 
-            this.studentInfoDetailsToolStripMenuItem.Name = "studentInfoDetailsToolStripMenuItem";
-            this.studentInfoDetailsToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.studentInfoDetailsToolStripMenuItem.Text = "Student Info Details";
-            this.studentInfoDetailsToolStripMenuItem.Click += new System.EventHandler(this.studentInfoDetailsToolStripMenuItem_Click_1);
             // 
             // addNewSessionInfoToolStripMenuItem
             // 
@@ -207,6 +198,13 @@
             this.byTradeToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.byTradeToolStripMenuItem.Text = "By Trade";
             this.byTradeToolStripMenuItem.Click += new System.EventHandler(this.byTradeToolStripMenuItem_Click_1);
+            // 
+            // searchEnquiryDetailsToolStripMenuItem
+            // 
+            this.searchEnquiryDetailsToolStripMenuItem.Name = "searchEnquiryDetailsToolStripMenuItem";
+            this.searchEnquiryDetailsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.searchEnquiryDetailsToolStripMenuItem.Text = "Search Enquiry Details";
+            this.searchEnquiryDetailsToolStripMenuItem.Click += new System.EventHandler(this.searchEnquiryDetailsToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem1
             // 
@@ -307,13 +305,6 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // searchEnquiryDetailsToolStripMenuItem
-            // 
-            this.searchEnquiryDetailsToolStripMenuItem.Name = "searchEnquiryDetailsToolStripMenuItem";
-            this.searchEnquiryDetailsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.searchEnquiryDetailsToolStripMenuItem.Text = "Search Enquiry Details";
-            this.searchEnquiryDetailsToolStripMenuItem.Click += new System.EventHandler(this.searchEnquiryDetailsToolStripMenuItem_Click);
-            // 
             // main_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,7 +356,6 @@
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem studentInfoDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewSessionInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
