@@ -60,6 +60,14 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.addNewTradeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateTradeInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addStudentEnquiryDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editUpdateStudentDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchStudentEnquiryDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +80,7 @@
             this.reportsToolStripMenuItem,
             this.reportsToolStripMenuItem1,
             this.toolsToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.helpToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
@@ -90,28 +99,37 @@
             this.addNewSessionInfoToolStripMenuItem});
             this.formsToolStripMenuItem.Name = "formsToolStripMenuItem";
             this.formsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
-            this.formsToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.formsToolStripMenuItem.Text = "&Student";
+            this.formsToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.formsToolStripMenuItem.Text = "&Student Master";
             // 
             // addTradeToolStripMenuItem
             // 
+            this.addTradeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewTradeToolStripMenuItem,
+            this.updateTradeInfoToolStripMenuItem});
             this.addTradeToolStripMenuItem.Name = "addTradeToolStripMenuItem";
             this.addTradeToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.addTradeToolStripMenuItem.Text = "Add Trade";
+            this.addTradeToolStripMenuItem.Text = "Trade Master";
             this.addTradeToolStripMenuItem.Click += new System.EventHandler(this.addTradeToolStripMenuItem_Click);
             // 
             // studentEnquiryToolStripMenuItem
             // 
+            this.studentEnquiryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addStudentEnquiryDetailToolStripMenuItem,
+            this.searchStudentEnquiryDetailsToolStripMenuItem});
             this.studentEnquiryToolStripMenuItem.Name = "studentEnquiryToolStripMenuItem";
-            this.studentEnquiryToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.studentEnquiryToolStripMenuItem.Text = "Student Enquiry";
+            this.studentEnquiryToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.studentEnquiryToolStripMenuItem.Text = "Enquiry Master";
             this.studentEnquiryToolStripMenuItem.Click += new System.EventHandler(this.studentEnquiryToolStripMenuItem_Click_1);
             // 
             // addStudentEnquiryToolStripMenuItem
             // 
+            this.addStudentEnquiryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addStudentToolStripMenuItem,
+            this.editUpdateStudentDetailsToolStripMenuItem});
             this.addStudentEnquiryToolStripMenuItem.Name = "addStudentEnquiryToolStripMenuItem";
-            this.addStudentEnquiryToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.addStudentEnquiryToolStripMenuItem.Text = "Register Student";
+            this.addStudentEnquiryToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.addStudentEnquiryToolStripMenuItem.Text = "Student Register Master";
             this.addStudentEnquiryToolStripMenuItem.Click += new System.EventHandler(this.addStudentEnquiryToolStripMenuItem_Click);
             // 
             // receiptToolStripMenuItem
@@ -123,9 +141,11 @@
             // 
             // addNewSessionInfoToolStripMenuItem
             // 
+            this.addNewSessionInfoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewSessionToolStripMenuItem});
             this.addNewSessionInfoToolStripMenuItem.Name = "addNewSessionInfoToolStripMenuItem";
-            this.addNewSessionInfoToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.addNewSessionInfoToolStripMenuItem.Text = "Add New Session Info";
+            this.addNewSessionInfoToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.addNewSessionInfoToolStripMenuItem.Text = "Year Master";
             this.addNewSessionInfoToolStripMenuItem.Click += new System.EventHandler(this.addNewSessionInfoToolStripMenuItem_Click_1);
             // 
             // loginToolStripMenuItem
@@ -135,8 +155,8 @@
             this.createUserToolStripMenuItem,
             this.changePasswordToolStripMenuItem});
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.loginToolStripMenuItem.Text = "Login";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.loginToolStripMenuItem.Text = "Login Master";
             // 
             // userLoginToolStripMenuItem
             // 
@@ -162,11 +182,11 @@
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.searchEnquiryDetailsToolStripMenuItem,
             this.byNameToolStripMenuItem,
             this.byCityToolStripMenuItem,
             this.byRegisterNumberToolStripMenuItem,
-            this.byTradeToolStripMenuItem,
-            this.searchEnquiryDetailsToolStripMenuItem});
+            this.byTradeToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.reportsToolStripMenuItem.Text = "Search";
@@ -305,6 +325,59 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // addNewTradeToolStripMenuItem
+            // 
+            this.addNewTradeToolStripMenuItem.Name = "addNewTradeToolStripMenuItem";
+            this.addNewTradeToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.addNewTradeToolStripMenuItem.Text = "Add New Trade";
+            this.addNewTradeToolStripMenuItem.Click += new System.EventHandler(this.addNewTradeToolStripMenuItem_Click);
+            // 
+            // updateTradeInfoToolStripMenuItem
+            // 
+            this.updateTradeInfoToolStripMenuItem.Name = "updateTradeInfoToolStripMenuItem";
+            this.updateTradeInfoToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.updateTradeInfoToolStripMenuItem.Text = "Update Trade Info";
+            // 
+            // addStudentEnquiryDetailToolStripMenuItem
+            // 
+            this.addStudentEnquiryDetailToolStripMenuItem.Name = "addStudentEnquiryDetailToolStripMenuItem";
+            this.addStudentEnquiryDetailToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.addStudentEnquiryDetailToolStripMenuItem.Text = "Add Student Enquiry Details";
+            this.addStudentEnquiryDetailToolStripMenuItem.Click += new System.EventHandler(this.addStudentEnquiryDetailToolStripMenuItem_Click);
+            // 
+            // addStudentToolStripMenuItem
+            // 
+            this.addStudentToolStripMenuItem.Name = "addStudentToolStripMenuItem";
+            this.addStudentToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addStudentToolStripMenuItem.Text = "Add Student";
+            this.addStudentToolStripMenuItem.Click += new System.EventHandler(this.addStudentToolStripMenuItem_Click);
+            // 
+            // editUpdateStudentDetailsToolStripMenuItem
+            // 
+            this.editUpdateStudentDetailsToolStripMenuItem.Name = "editUpdateStudentDetailsToolStripMenuItem";
+            this.editUpdateStudentDetailsToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.editUpdateStudentDetailsToolStripMenuItem.Text = "Edit/Update Student Details";
+            // 
+            // addNewSessionToolStripMenuItem
+            // 
+            this.addNewSessionToolStripMenuItem.Name = "addNewSessionToolStripMenuItem";
+            this.addNewSessionToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.addNewSessionToolStripMenuItem.Text = "Add New Session";
+            this.addNewSessionToolStripMenuItem.Click += new System.EventHandler(this.addNewSessionToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(60, 20);
+            this.toolStripMenuItem1.Text = "Finance";
+            // 
+            // searchStudentEnquiryDetailsToolStripMenuItem
+            // 
+            this.searchStudentEnquiryDetailsToolStripMenuItem.Name = "searchStudentEnquiryDetailsToolStripMenuItem";
+            this.searchStudentEnquiryDetailsToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.searchStudentEnquiryDetailsToolStripMenuItem.Text = "Search Student Enquiry Details";
+            this.searchStudentEnquiryDetailsToolStripMenuItem.Click += new System.EventHandler(this.searchStudentEnquiryDetailsToolStripMenuItem_Click);
+            // 
             // main_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,6 +433,14 @@
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchEnquiryDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewTradeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateTradeInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addStudentEnquiryDetailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addStudentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editUpdateStudentDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewSessionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem searchStudentEnquiryDetailsToolStripMenuItem;
     }
 }
 

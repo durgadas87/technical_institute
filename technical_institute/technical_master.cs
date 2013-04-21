@@ -218,29 +218,29 @@ namespace technical_institute
             cmd = new SqlCommand();
             cmd.Connection = con;
             string academic_year=start_year_combo.Text+"-"+end_year_combo.Text;
-            if(grid_obj.Rows.Count>0)
-            {
-                MessageBox.Show("Full");
-            }
-            else
-            {
-                MessageBox.Show("Empty");
-            }
-            //cmd.CommandText = "insert into academic_year_tbl(academic_year) values('" + academic_year + "')";
-            //int result = cmd.ExecuteNonQuery();
-            //if (result > 0)
+            //if(grid_obj.Rows.Count>0)
             //{
-            //    MessageBox.Show("Academic Year Added");
-
-            //    string[] row = new string[]
-            //    {
-            //        academic_id_txt.Text,academic_year
-            //    };
-            //    grid_obj.Rows.Add(row);
-            //    academic_id_txt.Text = "";
-            //    start_year_combo.SelectedText="";
-            //    end_year_combo.SelectedText="";
+            //    MessageBox.Show("Full");
             //}
+            //else
+            //{
+            //    MessageBox.Show("Empty");
+            //}
+            cmd.CommandText = "insert into academic_year_tbl(academic_year) values('" + academic_year + "')";
+            int result = cmd.ExecuteNonQuery();
+            if (result > 0)
+            {
+                MessageBox.Show("Academic Year Added");
+
+                string[] row = new string[]
+                {
+                    academic_id_txt.Text,academic_year
+                };
+                grid_obj.Rows.Add(row);
+                academic_id_txt.Text = "";
+                start_year_combo.SelectedText = "";
+                end_year_combo.SelectedText = "";
+            }
         }
         catch (Exception ex)
         {

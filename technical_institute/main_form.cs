@@ -105,9 +105,7 @@ namespace technical_institute
 
         private void addTradeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            add_trade_form trade_obj = new add_trade_form();
-            trade_obj.MdiParent = this;
-            trade_obj.Show();
+            
         }
 
       //  privaion_short_frm admission_form = new admission_short_frm();
@@ -119,9 +117,7 @@ namespace technical_institute
         {
         //abc admission = new abc(); 
         //    admission.Show();
-            student_registration_updated_frm frm = new student_registration_updated_frm();
-            frm.MdiParent = this;
-            frm.Show();
+        
 
         
         } 
@@ -270,9 +266,7 @@ namespace technical_institute
 
         private void studentEnquiryToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            student_enquiry_frm frm = new student_enquiry_frm();
-            frm.MdiParent = this;
-            frm.Show();
+            
         }
 
         private void createUserToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -289,9 +283,7 @@ namespace technical_institute
 
         private void addNewSessionInfoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            add_academic_year_frm frm = new add_academic_year_frm();
-            frm.MdiParent = this;
-            frm.Show();
+            
         }
 
         private void userLoginToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -395,6 +387,43 @@ namespace technical_institute
             search_enquiry_detail_frm frm = new search_enquiry_detail_frm();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void addNewTradeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            add_trade_form trade_obj = new add_trade_form();
+            trade_obj.MdiParent = this;
+            trade_obj.Show();
+        }
+
+        private void addStudentEnquiryDetailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            student_enquiry_frm frm = new student_enquiry_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void addStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            student_registration_updated_frm frm = new student_registration_updated_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void addNewSessionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            add_academic_year_frm frm = new add_academic_year_frm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void searchStudentEnquiryDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            search_enquiry_detail_frm frm = new search_enquiry_detail_frm();
+            frm.MdiParent = this;
+            frm.Show();
+
         }
     }
 }
