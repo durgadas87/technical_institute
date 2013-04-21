@@ -419,11 +419,9 @@ namespace technical_institute
 
         private void searchStudentEnquiryDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             search_enquiry_detail_frm frm = new search_enquiry_detail_frm();
             frm.MdiParent = this;
             frm.Show();
-
         }
     }
 }

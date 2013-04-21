@@ -85,28 +85,33 @@
             this.lname_txt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.update_btn = new System.Windows.Forms.Button();
+            this.new_btn = new System.Windows.Forms.Button();
+            this.save_btn = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.permanent_nationality_txt = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.permanent_city_txt = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.permanent_pin_code_txt = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.permanent_state_txt = new System.Windows.Forms.TextBox();
+            this.permanent_district_txt = new System.Windows.Forms.TextBox();
+            this.permanent_taluka_txt = new System.Windows.Forms.TextBox();
+            this.permanent_add_txt = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.local_city_txt = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.pin_code_txt = new System.Windows.Forms.TextBox();
+            this.local_pin_code_txt = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.state_txt = new System.Windows.Forms.TextBox();
-            this.district_txt = new System.Windows.Forms.TextBox();
-            this.taluka_txt = new System.Windows.Forms.TextBox();
-            this.address_txt = new System.Windows.Forms.TextBox();
+            this.local_state_txt = new System.Windows.Forms.TextBox();
+            this.local_district_txt = new System.Windows.Forms.TextBox();
+            this.local_taluka_txt = new System.Windows.Forms.TextBox();
+            this.local_address_txt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -251,6 +256,7 @@
             this.button4.TabIndex = 169;
             this.button4.Text = "New";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -261,6 +267,7 @@
             this.button2.TabIndex = 168;
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button3
             // 
@@ -271,6 +278,7 @@
             this.button3.TabIndex = 167;
             this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_3);
             // 
             // mother_name_txt
             // 
@@ -388,8 +396,12 @@
             this.father_occupation_combo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.father_occupation_combo.FormattingEnabled = true;
             this.father_occupation_combo.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
+            "Business Men",
+            "Government Servant",
+            "Worker",
+            "Farmer",
+            "Ex-Servicemen",
+            ""});
             this.father_occupation_combo.Location = new System.Drawing.Point(577, 130);
             this.father_occupation_combo.Name = "father_occupation_combo";
             this.father_occupation_combo.Size = new System.Drawing.Size(100, 25);
@@ -482,8 +494,10 @@
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.Location = new System.Drawing.Point(170, 264);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(111, 25);
+            this.dateTimePicker2.Size = new System.Drawing.Size(135, 25);
             this.dateTimePicker2.TabIndex = 150;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.dateTimePicker2.Leave += new System.EventHandler(this.dateTimePicker2_Leave);
             // 
             // dateTimePicker1
             // 
@@ -675,7 +689,7 @@
             this.age_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.age_txt.Enabled = false;
             this.age_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.age_txt.Location = new System.Drawing.Point(401, 268);
+            this.age_txt.Location = new System.Drawing.Point(401, 265);
             this.age_txt.Name = "age_txt";
             this.age_txt.Size = new System.Drawing.Size(60, 25);
             this.age_txt.TabIndex = 129;
@@ -817,6 +831,9 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Black;
+            this.tabPage2.Controls.Add(this.update_btn);
+            this.tabPage2.Controls.Add(this.new_btn);
+            this.tabPage2.Controls.Add(this.save_btn);
             this.tabPage2.Controls.Add(this.groupBox6);
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -826,17 +843,50 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Address Information";
             // 
+            // update_btn
+            // 
+            this.update_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_btn.Location = new System.Drawing.Point(447, 401);
+            this.update_btn.Name = "update_btn";
+            this.update_btn.Size = new System.Drawing.Size(75, 23);
+            this.update_btn.TabIndex = 51;
+            this.update_btn.Text = "UPDATE";
+            this.update_btn.UseVisualStyleBackColor = true;
+            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
+            // 
+            // new_btn
+            // 
+            this.new_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.new_btn.Location = new System.Drawing.Point(366, 401);
+            this.new_btn.Name = "new_btn";
+            this.new_btn.Size = new System.Drawing.Size(75, 23);
+            this.new_btn.TabIndex = 50;
+            this.new_btn.Text = "NEW";
+            this.new_btn.UseVisualStyleBackColor = true;
+            // 
+            // save_btn
+            // 
+            this.save_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save_btn.Location = new System.Drawing.Point(285, 401);
+            this.save_btn.Name = "save_btn";
+            this.save_btn.Size = new System.Drawing.Size(75, 23);
+            this.save_btn.TabIndex = 49;
+            this.save_btn.Text = "SAVE";
+            this.save_btn.UseVisualStyleBackColor = true;
+            // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.Black;
-            this.groupBox6.Controls.Add(this.textBox5);
+            this.groupBox6.Controls.Add(this.permanent_nationality_txt);
+            this.groupBox6.Controls.Add(this.label29);
+            this.groupBox6.Controls.Add(this.permanent_city_txt);
             this.groupBox6.Controls.Add(this.label20);
-            this.groupBox6.Controls.Add(this.textBox6);
+            this.groupBox6.Controls.Add(this.permanent_pin_code_txt);
             this.groupBox6.Controls.Add(this.label22);
-            this.groupBox6.Controls.Add(this.textBox8);
-            this.groupBox6.Controls.Add(this.textBox9);
-            this.groupBox6.Controls.Add(this.textBox10);
-            this.groupBox6.Controls.Add(this.textBox11);
+            this.groupBox6.Controls.Add(this.permanent_state_txt);
+            this.groupBox6.Controls.Add(this.permanent_district_txt);
+            this.groupBox6.Controls.Add(this.permanent_taluka_txt);
+            this.groupBox6.Controls.Add(this.permanent_add_txt);
             this.groupBox6.Controls.Add(this.label30);
             this.groupBox6.Controls.Add(this.label31);
             this.groupBox6.Controls.Add(this.label32);
@@ -849,14 +899,33 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Permanent Address";
             // 
-            // textBox5
+            // permanent_nationality_txt
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(104, 112);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(247, 25);
-            this.textBox5.TabIndex = 34;
+            this.permanent_nationality_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.permanent_nationality_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.permanent_nationality_txt.Location = new System.Drawing.Point(104, 281);
+            this.permanent_nationality_txt.Name = "permanent_nationality_txt";
+            this.permanent_nationality_txt.Size = new System.Drawing.Size(116, 25);
+            this.permanent_nationality_txt.TabIndex = 47;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(30, 281);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(70, 17);
+            this.label29.TabIndex = 48;
+            this.label29.Text = "Natinality";
+            // 
+            // permanent_city_txt
+            // 
+            this.permanent_city_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.permanent_city_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.permanent_city_txt.Location = new System.Drawing.Point(104, 112);
+            this.permanent_city_txt.Name = "permanent_city_txt";
+            this.permanent_city_txt.Size = new System.Drawing.Size(247, 25);
+            this.permanent_city_txt.TabIndex = 34;
             // 
             // label20
             // 
@@ -868,14 +937,14 @@
             this.label20.TabIndex = 46;
             this.label20.Text = "city/village";
             // 
-            // textBox6
+            // permanent_pin_code_txt
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(104, 247);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(116, 25);
-            this.textBox6.TabIndex = 38;
+            this.permanent_pin_code_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.permanent_pin_code_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.permanent_pin_code_txt.Location = new System.Drawing.Point(104, 247);
+            this.permanent_pin_code_txt.Name = "permanent_pin_code_txt";
+            this.permanent_pin_code_txt.Size = new System.Drawing.Size(116, 25);
+            this.permanent_pin_code_txt.TabIndex = 38;
             // 
             // label22
             // 
@@ -887,43 +956,44 @@
             this.label22.TabIndex = 45;
             this.label22.Text = "pin code";
             // 
-            // textBox8
+            // permanent_state_txt
             // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(104, 212);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(247, 25);
-            this.textBox8.TabIndex = 37;
+            this.permanent_state_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.permanent_state_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.permanent_state_txt.Location = new System.Drawing.Point(104, 212);
+            this.permanent_state_txt.Name = "permanent_state_txt";
+            this.permanent_state_txt.Size = new System.Drawing.Size(247, 25);
+            this.permanent_state_txt.TabIndex = 37;
             // 
-            // textBox9
+            // permanent_district_txt
             // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(104, 176);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(248, 25);
-            this.textBox9.TabIndex = 36;
+            this.permanent_district_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.permanent_district_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.permanent_district_txt.Location = new System.Drawing.Point(104, 176);
+            this.permanent_district_txt.Name = "permanent_district_txt";
+            this.permanent_district_txt.Size = new System.Drawing.Size(248, 25);
+            this.permanent_district_txt.TabIndex = 36;
             // 
-            // textBox10
+            // permanent_taluka_txt
             // 
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(104, 145);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(247, 25);
-            this.textBox10.TabIndex = 35;
+            this.permanent_taluka_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.permanent_taluka_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.permanent_taluka_txt.Location = new System.Drawing.Point(104, 145);
+            this.permanent_taluka_txt.Name = "permanent_taluka_txt";
+            this.permanent_taluka_txt.Size = new System.Drawing.Size(247, 25);
+            this.permanent_taluka_txt.TabIndex = 35;
             // 
-            // textBox11
+            // permanent_add_txt
             // 
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox11.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(104, 31);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(248, 71);
-            this.textBox11.TabIndex = 33;
+            this.permanent_add_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.permanent_add_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.permanent_add_txt.Location = new System.Drawing.Point(104, 31);
+            this.permanent_add_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.permanent_add_txt.Multiline = true;
+            this.permanent_add_txt.Name = "permanent_add_txt";
+            this.permanent_add_txt.Size = new System.Drawing.Size(248, 71);
+            this.permanent_add_txt.TabIndex = 33;
+            this.permanent_add_txt.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label30
             // 
@@ -969,18 +1039,19 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Black;
-            this.groupBox4.Controls.Add(this.textBox3);
+            this.groupBox4.Controls.Add(this.local_city_txt);
             this.groupBox4.Controls.Add(this.label28);
-            this.groupBox4.Controls.Add(this.pin_code_txt);
+            this.groupBox4.Controls.Add(this.local_pin_code_txt);
             this.groupBox4.Controls.Add(this.label27);
-            this.groupBox4.Controls.Add(this.state_txt);
-            this.groupBox4.Controls.Add(this.district_txt);
-            this.groupBox4.Controls.Add(this.taluka_txt);
-            this.groupBox4.Controls.Add(this.address_txt);
+            this.groupBox4.Controls.Add(this.local_state_txt);
+            this.groupBox4.Controls.Add(this.local_district_txt);
+            this.groupBox4.Controls.Add(this.local_taluka_txt);
+            this.groupBox4.Controls.Add(this.local_address_txt);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label14);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(41, 17);
             this.groupBox4.Name = "groupBox4";
@@ -989,14 +1060,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Local Address";
             // 
-            // textBox3
+            // local_city_txt
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(100, 112);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(247, 25);
-            this.textBox3.TabIndex = 34;
+            this.local_city_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.local_city_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.local_city_txt.Location = new System.Drawing.Point(100, 112);
+            this.local_city_txt.Name = "local_city_txt";
+            this.local_city_txt.Size = new System.Drawing.Size(247, 25);
+            this.local_city_txt.TabIndex = 34;
             // 
             // label28
             // 
@@ -1008,14 +1079,14 @@
             this.label28.TabIndex = 46;
             this.label28.Text = "city/village";
             // 
-            // pin_code_txt
+            // local_pin_code_txt
             // 
-            this.pin_code_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pin_code_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pin_code_txt.Location = new System.Drawing.Point(100, 247);
-            this.pin_code_txt.Name = "pin_code_txt";
-            this.pin_code_txt.Size = new System.Drawing.Size(116, 25);
-            this.pin_code_txt.TabIndex = 38;
+            this.local_pin_code_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.local_pin_code_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.local_pin_code_txt.Location = new System.Drawing.Point(100, 247);
+            this.local_pin_code_txt.Name = "local_pin_code_txt";
+            this.local_pin_code_txt.Size = new System.Drawing.Size(116, 25);
+            this.local_pin_code_txt.TabIndex = 38;
             // 
             // label27
             // 
@@ -1027,43 +1098,43 @@
             this.label27.TabIndex = 45;
             this.label27.Text = "pin code";
             // 
-            // state_txt
+            // local_state_txt
             // 
-            this.state_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.state_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.state_txt.Location = new System.Drawing.Point(100, 212);
-            this.state_txt.Name = "state_txt";
-            this.state_txt.Size = new System.Drawing.Size(247, 25);
-            this.state_txt.TabIndex = 37;
+            this.local_state_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.local_state_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.local_state_txt.Location = new System.Drawing.Point(100, 212);
+            this.local_state_txt.Name = "local_state_txt";
+            this.local_state_txt.Size = new System.Drawing.Size(247, 25);
+            this.local_state_txt.TabIndex = 37;
             // 
-            // district_txt
+            // local_district_txt
             // 
-            this.district_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.district_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.district_txt.Location = new System.Drawing.Point(100, 176);
-            this.district_txt.Name = "district_txt";
-            this.district_txt.Size = new System.Drawing.Size(248, 25);
-            this.district_txt.TabIndex = 36;
+            this.local_district_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.local_district_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.local_district_txt.Location = new System.Drawing.Point(100, 176);
+            this.local_district_txt.Name = "local_district_txt";
+            this.local_district_txt.Size = new System.Drawing.Size(248, 25);
+            this.local_district_txt.TabIndex = 36;
             // 
-            // taluka_txt
+            // local_taluka_txt
             // 
-            this.taluka_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.taluka_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taluka_txt.Location = new System.Drawing.Point(100, 145);
-            this.taluka_txt.Name = "taluka_txt";
-            this.taluka_txt.Size = new System.Drawing.Size(247, 25);
-            this.taluka_txt.TabIndex = 35;
+            this.local_taluka_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.local_taluka_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.local_taluka_txt.Location = new System.Drawing.Point(100, 145);
+            this.local_taluka_txt.Name = "local_taluka_txt";
+            this.local_taluka_txt.Size = new System.Drawing.Size(247, 25);
+            this.local_taluka_txt.TabIndex = 35;
             // 
-            // address_txt
+            // local_address_txt
             // 
-            this.address_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.address_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.address_txt.Location = new System.Drawing.Point(100, 32);
-            this.address_txt.Margin = new System.Windows.Forms.Padding(4);
-            this.address_txt.Multiline = true;
-            this.address_txt.Name = "address_txt";
-            this.address_txt.Size = new System.Drawing.Size(248, 71);
-            this.address_txt.TabIndex = 33;
+            this.local_address_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.local_address_txt.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.local_address_txt.Location = new System.Drawing.Point(100, 32);
+            this.local_address_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.local_address_txt.Multiline = true;
+            this.local_address_txt.Name = "local_address_txt";
+            this.local_address_txt.Size = new System.Drawing.Size(248, 71);
+            this.local_address_txt.TabIndex = 33;
             // 
             // label5
             // 
@@ -1193,7 +1264,7 @@
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(212, 9);
+            this.label10.Location = new System.Drawing.Point(216, 14);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(495, 26);
             this.label10.TabIndex = 20;
@@ -1296,27 +1367,27 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox permanent_city_txt;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox permanent_pin_code_txt;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox permanent_state_txt;
+        private System.Windows.Forms.TextBox permanent_district_txt;
+        private System.Windows.Forms.TextBox permanent_taluka_txt;
+        private System.Windows.Forms.TextBox permanent_add_txt;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox local_city_txt;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox pin_code_txt;
+        private System.Windows.Forms.TextBox local_pin_code_txt;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox state_txt;
-        private System.Windows.Forms.TextBox district_txt;
-        private System.Windows.Forms.TextBox taluka_txt;
-        private System.Windows.Forms.TextBox address_txt;
+        private System.Windows.Forms.TextBox local_state_txt;
+        private System.Windows.Forms.TextBox local_district_txt;
+        private System.Windows.Forms.TextBox local_taluka_txt;
+        private System.Windows.Forms.TextBox local_address_txt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -1333,6 +1404,11 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox permanent_nationality_txt;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Button update_btn;
+        private System.Windows.Forms.Button new_btn;
+        private System.Windows.Forms.Button save_btn;
 
 
 

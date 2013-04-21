@@ -12,10 +12,10 @@ namespace technical_institute
     public partial class student_enquiry_frm : Form
     {
         technical_master master_obj;
-        SqlConnectionStringBuilder bldr;
-        SqlConnection con;
-        SqlCommand cmd;
-        SqlDataReader reader;
+        //SqlConnectionStringBuilder bldr;
+        //SqlConnection con;
+        //SqlCommand cmd;
+        //SqlDataReader reader;
         
         public student_enquiry_frm()
         {
@@ -58,6 +58,7 @@ namespace technical_institute
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             master_obj = new technical_master();
             master_obj.get_enquiry_id(enquiry_id_txt);
             student_name_txt.Enabled = true;

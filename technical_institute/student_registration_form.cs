@@ -12,10 +12,10 @@ namespace technical_institute
 {
     public partial class admission_short_frm : Form
     {
-        SqlConnectionStringBuilder strb;
-        SqlConnection con;
-        SqlCommand cmd;
-        SqlDataReader reader;
+        //SqlConnectionStringBuilder strb;
+        //SqlConnection con;
+        //SqlCommand cmd;
+        ////SqlDataReader reader;
         public admission_short_frm()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace technical_institute
         {
             
         }
-        int previous_mks_var;
+        //int previous_mks_var;
         
         private void button2_Click(object sender, EventArgs e)
         {

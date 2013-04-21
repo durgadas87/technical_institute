@@ -17,10 +17,10 @@ namespace technical_institute
             try
             {
                 builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "(local)";
+                builder.DataSource = "SHYAM-PC\\SQLEXPRESS";
                 builder.InitialCatalog = "technical_institute";
                 builder.UserID = "sa";
-                builder.Password = "sa12345";
+                builder.Password = "12345";
                 con = new SqlConnection(builder.ConnectionString);
                 con.Open();
             }
@@ -508,26 +508,61 @@ namespace technical_institute
         }
     }
 
-     //   public void student_personal_info(TextBox serial_txt,dateTimePicker dateTimePicker1,TextBox register_txt,TextBox previous_regis_txt,TextBox selfname_txt,
-     //   ComboBox father_occupation_combo ,TextBox lname_txt,TextBox ffullname_txt,TextBox mother_name_txt,dateTimePicker dateTimePicker2,TextBox age_txt,ComboBox gender_combo,
-     //   ComboBox marital_combo,ComboBox religon_combo,ComboBox category_combo,ComboBox cast_txt,ComboBox sub_caste_txt,TextBox aadhar_txt,TextBox contact_txt,TextBox alternate_txt,TextBox email_txt);
-     //{
-     //   try
-     //   {
-     //       db_connect();
-     //       cmd = new SqlCommand();
-     //       cmd.Connection = con;
-     //       cmd.CommandText = "insert into student_personal_info_tbl(serial_no,admission_date,register_no,perevious_register_no,student_name,father_name,father_occupation,last_name,father_full_name,mother_name,date_of_birth,age,gender,marital_status,religion,category,cast,sub_cast,aadhar_id,contanct_no,alternate_no,emailid) values('"+serial_txt.Text+"','"+dateTimePicker1.Text+"','"+register_txt.Text+"','"+ previous_regis_txt.Text+"','"+selfname_txt.Text+"','"+fname_txt.Text+"','"+father_occupation_combo.Text+"','"+lname_txt.Text+"','"+ffullname_txt.Text+"','"+mother_name_txt.Text+"','"+dateTimePicker2.Text+"','"+age_txt+"','"+gender_combo.Text+"','"+marital_combo.Text+"','"+religon_combo.Text+"','"+category_combo.Text+"','"+cast_txt.Text+"','"+sub_caste_txt.Text+"','"+aadhar_txt.Text+"','"+contact_txt.Text+"','"+alternate_txt.Text+"','"+email_txt.Text+"')";
+        public void student_tbl(TextBox serial_txt,DateTimePicker dateTimePicker1,TextBox fname_txt,TextBox register_txt,TextBox previous_regis_txt,TextBox selfname_txt,ComboBox father_occupation_combo ,TextBox lname_txt,TextBox ffullname_txt,TextBox mother_name_txt,DateTimePicker dateTimePicker2,TextBox age_txt,ComboBox gender_combo,ComboBox marital_combo,ComboBox religon_combo,ComboBox category_combo,TextBox cast_txt,TextBox sub_caste_txt,TextBox aadhar_txt,TextBox contact_txt,TextBox alternate_txt)
+     {
+        try
+        {
+            db_connect();
+            cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "insert into student_tbl(student_id,register_no,admission_date,student_name,father_name,father_occupation,last_name,father_full_name,mother_name,date_of_birth,gender,marital_status,religion,category,cast,sub_cast,aadhar_id,contact_no,alternate_no) values('" + serial_txt.Text + "','" + dateTimePicker1.Text + "','" + register_txt.Text + "','" + selfname_txt.Text + "','" + fname_txt.Text + "','" + father_occupation_combo.Text + "','" + lname_txt.Text + "','" + ffullname_txt.Text + "','" + mother_name_txt.Text + "','" + dateTimePicker2.Text + "','" + gender_combo.Text + "','" + marital_combo.Text + "','" + religon_combo.Text + "','" + category_combo.Text + "','" + cast_txt.Text + "','" + sub_caste_txt.Text + "','" + aadhar_txt.Text + "','" + contact_txt.Text + "','" + alternate_txt.Text + "')";
     
-     //       cmd.ExecuteNonQuery();
-     //       MessageBox.Show("Record Inserted Successfully.............");
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Record Inserted Successfully.............");
       
-     //    }
-     //catch (Exception ex)
-     //   {
-     //       MessageBox.Show("Error : " + ex.Message);
-     //   }
-    
+         }
+        catch(Exception ex)
+        {
+            MessageBox.Show("Error : " + ex.Message);
+        }
+    }
+    public void get_student_id(TextBox serial_txt)
+    {
+
+          
+            try
+            {
+                db_connect();
+                cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select max(student_id) from student_tbl";
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while(reader.Read())
+                    {
+                    string trade_id_var = reader[0].ToString();
+                    if (trade_id_var != "")
+                        {
+                            serial_txt.Text = "" + (Int64.Parse(trade_id_var) + 1);
+                        }
+                    else
+                        {
+                            serial_txt.Text = "1";
+                        }
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
+
+    }
+
+
     }
 
 
