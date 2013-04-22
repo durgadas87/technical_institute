@@ -54,8 +54,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.category_combo = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.birth_date_picker = new System.Windows.Forms.DateTimePicker();
+            this.admission_date_picker = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.religon_combo = new System.Windows.Forms.ComboBox();
@@ -211,8 +211,8 @@
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.category_combo);
             this.panel6.Controls.Add(this.label12);
-            this.panel6.Controls.Add(this.dateTimePicker2);
-            this.panel6.Controls.Add(this.dateTimePicker1);
+            this.panel6.Controls.Add(this.birth_date_picker);
+            this.panel6.Controls.Add(this.admission_date_picker);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.label13);
             this.panel6.Controls.Add(this.religon_combo);
@@ -488,25 +488,25 @@
             this.label12.TabIndex = 152;
             this.label12.Text = "Category";
             // 
-            // dateTimePicker2
+            // birth_date_picker
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(170, 264);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(135, 25);
-            this.dateTimePicker2.TabIndex = 150;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
-            this.dateTimePicker2.Leave += new System.EventHandler(this.dateTimePicker2_Leave);
+            this.birth_date_picker.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.birth_date_picker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.birth_date_picker.Location = new System.Drawing.Point(170, 264);
+            this.birth_date_picker.Name = "birth_date_picker";
+            this.birth_date_picker.Size = new System.Drawing.Size(135, 25);
+            this.birth_date_picker.TabIndex = 150;
+            this.birth_date_picker.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.birth_date_picker.Leave += new System.EventHandler(this.dateTimePicker2_Leave);
             // 
-            // dateTimePicker1
+            // admission_date_picker
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(544, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(129, 25);
-            this.dateTimePicker1.TabIndex = 149;
+            this.admission_date_picker.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.admission_date_picker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.admission_date_picker.Location = new System.Drawing.Point(544, 19);
+            this.admission_date_picker.Name = "admission_date_picker";
+            this.admission_date_picker.Size = new System.Drawing.Size(129, 25);
+            this.admission_date_picker.TabIndex = 149;
             // 
             // label4
             // 
@@ -772,6 +772,8 @@
             this.register_txt.Size = new System.Drawing.Size(153, 25);
             this.register_txt.TabIndex = 121;
             this.register_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.register_txt.Layout += new System.Windows.Forms.LayoutEventHandler(this.register_txt_Layout);
+            this.register_txt.Leave += new System.EventHandler(this.register_txt_Leave);
             // 
             // label11
             // 
@@ -1335,8 +1337,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox category_combo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker birth_date_picker;
+        private System.Windows.Forms.DateTimePicker admission_date_picker;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox religon_combo;

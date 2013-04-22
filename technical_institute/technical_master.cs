@@ -508,15 +508,15 @@ namespace technical_institute
         }
     }
 
-        public void student_tbl(TextBox serial_txt,DateTimePicker dateTimePicker1,TextBox fname_txt,TextBox register_txt,TextBox previous_regis_txt,TextBox selfname_txt,ComboBox father_occupation_combo ,TextBox lname_txt,TextBox ffullname_txt,TextBox mother_name_txt,DateTimePicker dateTimePicker2,TextBox age_txt,ComboBox gender_combo,ComboBox marital_combo,ComboBox religon_combo,ComboBox category_combo,TextBox cast_txt,TextBox sub_caste_txt,TextBox aadhar_txt,TextBox contact_txt,TextBox alternate_txt)
+        public void save_student_register_info(TextBox student_id_txt,TextBox register_no_txt,TextBox student_name_txt,TextBox father_name_txt,TextBox last_name_txt,TextBox father_full_name_txt,TextBox mother_name_txt,DateTimePicker birth_date_picker,TextBox age_txt,ComboBox gender_combo,ComboBox category_combo,ComboBox religion_combo,TextBox caste_txt,TextBox sub_caste_txt,ComboBox marrital_status_combo,DateTimePicker admission_date_picker,ComboBox father_occupation_combo,TextBox aadhar_id_txt,TextBox contact_no_txt,TextBox alternate_no_txt,TextBox email_id_txt)
      {
         try
         {
+            
             db_connect();
             cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "insert into student_tbl(student_id,register_no,admission_date,student_name,father_name,father_occupation,last_name,father_full_name,mother_name,date_of_birth,gender,marital_status,religion,category,cast,sub_cast,aadhar_id,contact_no,alternate_no) values('" + serial_txt.Text + "','" + dateTimePicker1.Text + "','" + register_txt.Text + "','" + selfname_txt.Text + "','" + fname_txt.Text + "','" + father_occupation_combo.Text + "','" + lname_txt.Text + "','" + ffullname_txt.Text + "','" + mother_name_txt.Text + "','" + dateTimePicker2.Text + "','" + gender_combo.Text + "','" + marital_combo.Text + "','" + religon_combo.Text + "','" + category_combo.Text + "','" + cast_txt.Text + "','" + sub_caste_txt.Text + "','" + aadhar_txt.Text + "','" + contact_txt.Text + "','" + alternate_txt.Text + "')";
-    
+            cmd.CommandText = "insert into student_tbl(student_id,register_no,student_name,father_name,last_name,father_full_name,mother_name,date_of_birth,age,gender,category,religion,caste,sub_cast,marital_status,admission_date,father_occupation,aadhar_id,contact_no,alternate_no,email_id) values(" + student_id_txt.Text + "," + register_no_txt.Text + ",'" + student_name_txt.Text + "','" + father_name_txt.Text + "','" + last_name_txt.Text + "','" + father_full_name_txt.Text + "','" + mother_name_txt.Text + "','" + birth_date_picker.Text + "','" + age_txt.Text + "','" + gender_combo.Text + "','" + category_combo.Text + "','" + religion_combo.Text + "','" + caste_txt.Text + "','" + sub_caste_txt.Text + "','" + marrital_status_combo.Text + "','" + admission_date_picker.Text + "','" + father_occupation_combo.Text + "','" + aadhar_id_txt.Text+ "','" + contact_no_txt.Text + "','"+alternate_no_txt.Text+"','"+email_id_txt.Text+"')";
             cmd.ExecuteNonQuery();
             MessageBox.Show("Record Inserted Successfully.............");
       
@@ -526,6 +526,45 @@ namespace technical_institute
             MessageBox.Show("Error : " + ex.Message);
         }
     }
+    public void get_previous_register_no(TextBox register_no_txt)
+    {
+        int student_id = 0;
+        string student_id_var = null;
+        try
+        {
+            db_connect();
+            cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select max(student_id) from student_tbl";
+            reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    student_id_var = reader[0].ToString();
+                    if (!String.IsNullOrEmpty(student_id_var))
+                    {
+                        student_id = int.Parse(student_id_var);
+                    }
+                }
+            }
+            reader.Close();
+            cmd.CommandText = "select register_no from student_tbl where student_id=" + student_id;
+            reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    register_no_txt.Text = "" + reader[0].ToString();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error : " + ex.Message);
+        }
+    }
+
     public void get_student_id(TextBox serial_txt)
     {
 
