@@ -101,6 +101,11 @@ namespace technical_institute
             
         }
 
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
        
         
     }

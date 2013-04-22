@@ -526,6 +526,34 @@ namespace technical_institute
             MessageBox.Show("Error : " + ex.Message);
         }
     }
+    public void search_by_student_name_function(TextBox student_first_name, TextBox last_name, ComboBox trade_name, ComboBox year_combo, DataGridView grid_obj)
+    {
+        try
+        {
+            db_connect();
+            cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select register_no,student_name,father_name,last_name,contact_no,admission_date from student_tbl where student_name like '%"+student_first_name.Text+"%' and  last_name like '%" + last_name.Text + "%'";
+            reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                grid_obj.Rows.Clear();
+                while (reader.Read())
+                {
+                    string[] row = new string[]
+                    {
+                        reader[0].ToString(),reader[1].ToString()+" "+reader[2].ToString()+" "+reader[3].ToString(),"",reader[4].ToString(),"","",reader[5].ToString()
+                    };
+                    grid_obj.Rows.Add(row);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error : " + ex.Message);
+        }
+    }
+
     public void get_previous_register_no(TextBox register_no_txt)
     {
         int student_id = 0;

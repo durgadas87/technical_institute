@@ -11,6 +11,7 @@ namespace technical_institute
 {
     public partial class search_by_name_frm : Form
     {
+        technical_master master_obj;
         public search_by_name_frm()
         {
             InitializeComponent();
@@ -18,8 +19,13 @@ namespace technical_institute
 
         private void search_by_name_frm_Load(object sender, EventArgs e)
         {
-            technical_master master_obj = new technical_master();
-            master_obj.load_acedamic_year(comboBox2);
+            master_obj = new technical_master();
+            master_obj.load_acedamic_year(year_combo);
+            master_obj.load_trade_name(trade_name_combo);
+            for (int i = 1980; i <= 2100; i++)
+            {
+                year_combo.Items.Add("" + i);
+            }
 
         }
 
@@ -29,6 +35,12 @@ namespace technical_institute
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            master_obj = new technical_master();
+            master_obj.search_by_student_name_function(student_first_name_txt, student_last_name_txt, trade_name_combo, year_combo,dataGridView1);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
